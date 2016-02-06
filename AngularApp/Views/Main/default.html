@@ -1,0 +1,10 @@
+﻿<div>
+    <div ng-controller="defaultController" ng-init="initController()">
+
+        <div style="padding-top: 20px;">
+            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+                <div ng-bind-html="MessageBox"></div>
+            </uib-alert>
+        </div>
+    </div>
+</div>

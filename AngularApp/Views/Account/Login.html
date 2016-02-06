@@ -1,0 +1,29 @@
+﻿<div>
+    <div id="register" style="width: 100%;" ng-controller="loginController" ng-init="initController()" ng-cloak>
+        <h3>Login</h3>
+        <table class="table" style="width: 100%">
+            <tr>
+                <td class="input-label">
+                    <label class="required">Username:</label>
+                </td>
+                <td class="input-box">
+                    <input type="text" style="width: 300px;" ng-model="Username" ng-class="{'validation-error':UsernameInputError}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="input-label-bottom">
+                    <label class="required">Password:</label>
+                </td>
+                <td class="input-box-bottom">
+                    <input type="password" style="width: 300px;" ng-model="Password" ng-class="{'validation-error':PasswordInputError}">
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-primary btn-lg" ng-click="login()">Login</button>
+        <div style="padding-top: 20px;">
+            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+                <div ng-bind-html="MessageBox"></div>
+            </uib-alert>
+        </div>
+    </div>
+</div>

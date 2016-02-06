@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>AngularJS</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script data-main="main.js" src="Scripts/require.js"></script>
+    <link href="Content/angular-block-ui.css" rel="stylesheet"/>
+    <link href="Content/bootstrap.css" rel="stylesheet"/>
+    <link href="Content/site.css" rel="stylesheet"/>
+    <link href="Content/table-sort.css" rel="stylesheet"/>
+</head>
+<body onload=" init(); " ng-controller="indexController" ng-init="initController()" ng-cloak>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-collapse collapse" id="mainMenu" ng-show="displayContent" style="visibility: hidden">
+            <ul class="nav navbar-nav" ng-repeat="menuItem in MenuItems">
+                <li><a href="{{menuItem.Route}}">{{menuItem.Description}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="margin: 75px 50px 50px 50px" ng-view></div>
+<script type="text/javascript">
+    function init() {
+        setTimeout(function() {
+            var mainMenu = document.getElementById("mainMenu");
+            mainMenu.style.visibility = "visible";
+        }, 1000);
+    }
+</script>
+</body>
+</html>

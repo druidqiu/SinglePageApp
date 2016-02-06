@@ -1,0 +1,2 @@
+﻿1.index.html中<script data-main="mian.js" src="Scripts/angular.js"></script>的"data-main"是加载requirejs的写法
+2.angularAMD: http://www.tuicool.com/articles/jm2YF3Q
