@@ -79,6 +79,7 @@
     <Content Include="Content\table-sort.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -104,8 +105,8 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angularAMD.js" />
+    <Content Include="Scripts\app\app-ajax-response-mock.js" />
     <Content Include="Scripts\app\app-config.js" />
-    <Content Include="Scripts\app\app-mock.js" />
     <Content Include="Scripts\app\services\ajaxService.js" />
     <Content Include="Scripts\app\services\alertService.js" />
     <Content Include="Scripts\app\services\mainService.js" />

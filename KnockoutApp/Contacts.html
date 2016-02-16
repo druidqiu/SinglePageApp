@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Contacts - Knockout App</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .oddRow {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center">Contacts</h1>
+<div id="contacts" class="container center-block">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone No.</th>
+            <th>Email Address</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--ko foreach: contacts-->
+        <tr>
+            <td data-bind="text: FirstName"></td>
+            <td data-bind="text: LastName"></td>
+            <td data-bind="text: PhoneNo"></td>
+            <td><input type="text" class="textbox long" data-bind="value:EmailAddress"/></td>
+            <td>
+                <a href="#" data-bind="click:$root.updateContact">Update</a>
+                <a href="#" data-bind="click:$root.deleteContact">Delete</a>
+            </td>
+        </tr>
+        <!--/ko-->
+        <tr data-bind="with:addedContact" id="trAdd">
+            <td><input type="text" class="textbox" data-bind="value: FirstName"></td>
+            <td><input type="text" class="textbox" data-bind="value: LastName"></td>
+            <td><input type="text" class="textbox" data-bind="value: PhoneNo"></td>
+            <td><input type="text" class="textbox long" data-bind="value: EmailAddress"></td>
+            <td><a href="#" data-bind="click: $root.addContact">Add</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script src="Scripts/jquery-2.2.0.js"></script>
+<script src="Scripts/knockout-3.4.0.js"></script>
+<script type="text/javascript">
+    var _contactsApiUrl = "http://localhost:63965/api/contacts/";
+
+    function ContactManagerModel() {
+        var self = this;
+        self.contacts = ko.observableArray();
+        self.addedContact = ko.observable();
+
+        self.loadContacts = function() {
+            $.get(_contactsApiUrl, null, function(data) {
+                self.contacts(data);
+                var emptyContact = { Id: "", FirstName: "", LastName: "", PhoneNo: "", EmailAddress: "" };
+                self.addedContact(emptyContact);
+                $("table tbody tr:even").not("[id=trAdd]").addClass("oddRow");
+            });
+        };
+        self.NewId = function () {
+                var maxId = -1;
+                self.contacts().forEach(function(item) {
+                    if (maxId < item.Id) {
+                        maxId = item.Id;
+                    }
+                });
+                return parseInt(maxId) + 1;
+            },
+        self.addContact = function(data) {
+            if (!self.validate(data)) {
+                return;
+            }
+            $.ajax({
+                url: _contactsApiUrl,
+                data: self.addedContact(),
+                type: "PUT",
+                success: self.loadContacts
+            });
+        };
+        self.updateContact = function(data) {
+            $.ajax({
+                url: _contactsApiUrl + data.Id,
+                data: data,
+                type: "POST",
+                success: self.loadContacts
+            });
+        };
+        self.deleteContact = function(data) {
+            $.ajax({
+                url: _contactsApiUrl + data.Id,
+                type: "DELETE",
+                success: self.loadContacts
+            });
+        };
+        self.validate = function(data) {
+            if (data.FirstName && data.LastName && data.PhoneNo && data.EmailAddress) {
+                return true;
+            }
+            alert("Please provide complete contact information!");
+            return false;
+        };
+
+        self.loadContacts();
+    }
+
+    ko.applyBindings(new ContactManagerModel());
+</script>
+</body>
+</html>

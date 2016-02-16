@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularApp", "AngularApp\An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutApp", "KnockoutApp\KnockoutApp.csproj", "{310FA510-5B10-4459-9C4A-7890DAD688BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{B17B0A29-2E97-4833-8EC8-8622AA8FCC33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{310FA510-5B10-4459-9C4A-7890DAD688BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310FA510-5B10-4459-9C4A-7890DAD688BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310FA510-5B10-4459-9C4A-7890DAD688BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17B0A29-2E97-4833-8EC8-8622AA8FCC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17B0A29-2E97-4833-8EC8-8622AA8FCC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17B0A29-2E97-4833-8EC8-8622AA8FCC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17B0A29-2E97-4833-8EC8-8622AA8FCC33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
