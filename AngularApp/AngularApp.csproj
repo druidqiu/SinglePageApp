@@ -89,6 +89,16 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="FromBooks\OREILLY\Chapter1\cart.html" />
+    <Content Include="FromBooks\OREILLY\Chapter1\hello.html" />
+    <Content Include="FromBooks\OREILLY\Chapter1\controllers.js" />
+    <Content Include="FromBooks\OREILLY\Chapter2\AMail\controllers.js" />
+    <Content Include="FromBooks\OREILLY\Chapter2\AMail\details.html" />
+    <Content Include="FromBooks\OREILLY\Chapter2\AMail\index.html" />
+    <Content Include="FromBooks\OREILLY\Chapter2\AMail\list.html" />
+    <Content Include="FromBooks\OREILLY\Chapter2\AMail\validating.html" />
+    <Content Include="FromBooks\OREILLY\Chapter2\shopping.html" />
+    <Content Include="FromBooks\OREILLY\Chapter2\shopping.js" />
     <Content Include="index.html" />
     <Content Include="main.js" />
     <Content Include="Scripts\angular-block-ui.js" />
@@ -146,7 +156,19 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\images\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\scripts\controllers\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\scripts\directives\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\scripts\filters\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\scripts\services\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\styles\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\vendor\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\app\views\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\config\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\test\e2e\" />
+    <Folder Include="FromBooks\OREILLY\Chapter3\test\spec\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

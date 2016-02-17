@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ShoppingModule">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body ng-controller="ShoppingController">
+    <div class="container">
+        <h1>Your Order</h1>
+        <div ng-repeat="item in items">
+            <span>{{item.title | titleCase}}</span>
+            <input ng-model="item.quantity" />
+            <span>{{item.price | currency}}</span>
+            <span>{{item.price * item.quantity | currency}}</span>
+            <button ng-click="remove($index)">Remove</button>
+        </div>
+        <div>Total:{{bill.total | currency}}</div>
+        <div>Discount:{{bill.discount | currency}}</div>
+        <div>Subtotal:{{bill.subtotal | currency}}</div>
+
+    </div>
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="shopping.js"></script>
+</body>
+</html>
